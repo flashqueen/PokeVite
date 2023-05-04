@@ -6,7 +6,7 @@ let num = ref(0)
 
 <template>
   <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-success bg-gradient">
     <div class="container-fluid">
       <router-link class="navbar-brand" to="/">
         <img src="./assets/eeveeLogo.png" alt="Logo" width="44" height="40" class="d-inline-block align-text-top">
