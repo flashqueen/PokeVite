@@ -36,7 +36,7 @@ let num = ref(0)
     </router-view>
   </div>
 
-  <footer class="bg-secondary text-light py-2 text-center">
+  <footer class="bg-success bg-gradient text-light py-0 text-center">
     <div>Danilo Oliveira &copy; | {{ new Date().getFullYear() }}</div>
   </footer>
 </template>

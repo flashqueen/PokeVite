@@ -13,7 +13,6 @@ onMounted(() => {
   fetch("https://pokeapi.co/api/v2/pokemon?limit=251&offset=0")
     .then(res => res.json())
     .then(res => pokemons.value = res.results);
-
 })
 
 const pokemonsFiltered = computed(() => {
@@ -25,11 +24,19 @@ const pokemonsFiltered = computed(() => {
   return pokemons.value;
 })
 
+const typeHandler = async () => {
+  if (types[1]) {
+    return types[0].type.name + '/' + types[1].type.name
+  }
+  return types[0]
+}
+
 const selectPokemon = async (pokemon) => {
   loading.value = true;
   await fetch(pokemon.url)
     .then(res => res.json())
     .then(res => pokemonSelected.value = res)
+    // .then(res => console.log(res))
     .catch(err => alert(err))
     .finally(() => loading.value = false)
 }
@@ -42,7 +49,8 @@ const selectPokemon = async (pokemon) => {
         <div class="col-sm-12 col-md-6">
           <CardPokemonSelected :name="pokemonSelected?.name" :exp="pokemonSelected?.base_experience"
             :weight="pokemonSelected?.weight" :height="pokemonSelected?.height"
-            :img="pokemonSelected?.sprites.other.dream_world.front_default" :loading="loading" />
+            :img="pokemonSelected?.sprites.other.dream_world.front_default" :types="pokemonSelected?.types"
+            :loading="loading" />
 
         </div>
         <div class="col-sm-12 col-md-6">
@@ -68,5 +76,11 @@ const selectPokemon = async (pokemon) => {
   max-height: 75vh;
   overflow-y: scroll;
   overflow-x: hidden;
+}
+
+@media (max-width: 640px) {
+  .card-list {
+    max-height: 48vh;
+  }
 }
 </style>
