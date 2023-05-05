@@ -47,7 +47,7 @@ const pokemon = defineProps(["name", "exp", "weight", "height", "img", "loading"
 
 <style scoped>
 .cardListPokemon {
-    height: 75vh;
+    height: 80vh;
     background: rgb(63, 174, 251);
     background: radial-gradient(circle, rgba(63, 174, 251, 0.5211659663865546) 0%, rgba(70, 252, 186, 0.4651435574229692) 100%);
 }
