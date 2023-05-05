@@ -22,7 +22,7 @@ let num = ref(0)
             <router-link class="nav-link" aria-current="page" to="/">Home</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/sobre">Sobre</router-link>
+            <router-link class="nav-link" to="/about">Sobre</router-link>
           </li>
         </ul>
       </div>
@@ -42,6 +42,12 @@ let num = ref(0)
 </template>
 
 <style>
+body {
+  height: 100vh;
+  background: rgb(0, 72, 157);
+  background: linear-gradient(180deg, rgba(0, 72, 157, 0.8995973389355743) 0%, rgba(9, 66, 121, 0.804359243697479) 13%, rgba(0, 212, 255, 0.700717787114846) 100%);
+}
+
 footer {
   position: fixed;
   bottom: 0;
